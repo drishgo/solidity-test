@@ -22,6 +22,9 @@ contract SimpleStorage{
         string username;
 
     }
+    function getNum() public view returns(uint256){
+        return num;
+    }
     
 
 }

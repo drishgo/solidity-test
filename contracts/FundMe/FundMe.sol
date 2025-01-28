@@ -29,6 +29,14 @@ contract FundMe{
             address patron = patrons[i];
             fundingGivenByAddress[patron] = 0;
     }
+    patrons = new address[](0);
     require(payable(msg.sender).send(address(this).balance),"Could not send Try again");
 }
 }
+
+
+// PAYABLE ALLOWS TRANSACTIONS TO OCCUR BETWEEN WALLETS AND CONTRACTS.
+// CONTRACT ALSO ACTS LIKE A WALLET ADDRESS THAT CAN STORE ETHER.
+// A PAYABLE PARAMETER ALLOWS A FUNCTION AND THEREFORE A CONTRACT TO BE ABLE TO
+// PERFORM ETHER TRANSFER TO AND FROM AN EOA LIKE METAMASK.
+// SO THE FUNCTION fund() IS DECLARED TO BE PAYABLE.
